@@ -105,3 +105,21 @@ h1 {
     transform: translateY(0);
   }
 }
+/* ---------- STOP BUTTON ---------- */
+.stop {
+  background: linear-gradient(135deg, #666, #222);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- VOLUME CONTROL ---------- */
+.volume {
+  margin-top: 28px;
+  color: white;
+  font-size: 14px;
+}
+
+.volume input {
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+}
