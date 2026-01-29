@@ -1,20 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disaster Sound Player</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    <div class="card">
-        <h1>Disaster Sound Player</h1>
+  background:
+    radial-gradient(circle at top left, #2a2a2a, transparent 40%),
+    radial-gradient(circle at bottom right, #111, transparent 40%),
+    #000;
 
-        <button id="wildfireBtn" class="btn red">🔥 Wildfire Sound</button>
-        <button id="hurricaneBtn" class="btn blue">🌪️ Hurricane Sound</button>
-    </div>
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* ---------- GLASS CARD ---------- */
+.card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.05)
+  );
+
+  padding: 44px 70px;
+  border-radius: 24px;
+
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ---------- TITLE ---------- */
+h1 {
+  color: white;
+  margin-bottom: 34px;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  width: 270px;
+  padding: 18px 0;
+  margin: 14px 0;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Wildfire */
+.red {
+  background: linear-gradient(135deg, #ff3b3b, #b30000);
+  box-shadow: 0 0 22px rgba(255, 0, 0, 0.45);
+}
+
+/* Hurricane */
+.blue {
+  background: linear-gradient(135deg, #00aaff, #005f99);
+  box-shadow: 0 0 22px rgba(0, 170, 255, 0.45);
+}
+
+/* Hover */
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Playing state */
+.playing {
+  animation: pulse 1.4s infinite alternate;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.45);
+  }
+  to {
+    box-shadow: 0 0 46px rgba(255, 255, 255, 0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
