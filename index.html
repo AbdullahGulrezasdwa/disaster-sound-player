@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Disaster Sound Player</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Disaster Sounds</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="card">
-    <h1>Disaster Sound Player</h1>
+    <h1>Disaster Sounds</h1>
 
-    <button id="wildfireBtn" class="btn red">
-      🔥 Wildfire Sound
-    </button>
+    <button class="btn red" id="wildfireBtn">🔥 Wildfire</button>
+    <button class="btn blue" id="hurricaneBtn">🌪 Hurricane</button>
 
-    <button id="hurricaneBtn" class="btn blue">
-      🌪️ Hurricane Sound
-    </button>
+    <!-- STOP -->
+    <button class="btn stop" id="stopBtn">⏹ Stop</button>
+
+    <!-- VOLUME -->
+    <div class="volume">
+      <label for="volumeSlider">🔊 Volume</label>
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.6"
+      >
+    </div>
   </div>
 
   <script src="script.js"></script>
