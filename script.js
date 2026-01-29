@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disaster Sound Player</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+const wildfire = new Audio("wildfire.mp3");
+const hurricane = new Audio("hurricane.mp3");
 
-    <div class="card">
-        <h1>Disaster Sound Player</h1>
+const wildfireBtn = document.getElementById("wildfireBtn");
+const hurricaneBtn = document.getElementById("hurricaneBtn");
 
-        <button id="wildfireBtn" class="btn red">🔥 Wildfire Sound</button>
-        <button id="hurricaneBtn" class="btn blue">🌪️ Hurricane Sound</button>
-    </div>
+function stopAll() {
+  wildfire.pause();
+  hurricane.pause();
 
-    <script src="script.js"></script>
-</body>
-</html>
+  wildfire.currentTime = 0;
+  hurricane.currentTime = 0;
 
+  wildfireBtn.classList.remove("playing");
+  hurricaneBtn.classList.remove("playing");
+}
+
+wildfireBtn.addEventListener("click", () => {
+  stopAll();
+  wildfire.play();
+  wildfireBtn.classList.add("playing");
+});
+
+hurricaneBtn.addEventListener("click", () => {
+  stopAll();
+  hurricane.play();
+  hurricaneBtn.classList.add("playing");
+});
